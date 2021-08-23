@@ -13,6 +13,7 @@
 		F9CE64F726D3D71900373B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CE64F526D3D71900373B7D /* Main.storyboard */; };
 		F9CE64F926D3D71B00373B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9CE64F826D3D71B00373B7D /* Assets.xcassets */; };
 		F9CE64FC26D3D71B00373B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CE64FA26D3D71B00373B7D /* LaunchScreen.storyboard */; };
+		F9FD955A26D3FAC900A3625B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD955926D3FAC900A3625B /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F9CE64F826D3D71B00373B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9CE64FB26D3D71B00373B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9CE64FD26D3D71B00373B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9FD955926D3FAC900A3625B /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F9CE64F126D3D71900373B7D /* SceneDelegate.swift */,
 				F9CE64F326D3D71900373B7D /* ViewController.swift */,
 				F9CE64F526D3D71900373B7D /* Main.storyboard */,
+				F9FD955926D3FAC900A3625B /* TimerViewController.swift */,
 				F9CE64F826D3D71B00373B7D /* Assets.xcassets */,
 				F9CE64FA26D3D71B00373B7D /* LaunchScreen.storyboard */,
 				F9CE64FD26D3D71B00373B7D /* Info.plist */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FD955A26D3FAC900A3625B /* TimerViewController.swift in Sources */,
 				F9CE64F426D3D71900373B7D /* ViewController.swift in Sources */,
 				F9CE64F026D3D71900373B7D /* AppDelegate.swift in Sources */,
 				F9CE64F226D3D71900373B7D /* SceneDelegate.swift in Sources */,
@@ -296,7 +300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.shkliaruk.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.shkliaruk.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
