@@ -19,24 +19,34 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         timerLabel.text = String(timerCount)
         
-        //drawing a circle shape layer
-        
         let center = view.center
-        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        shapeLayer.path = circularPath.cgPath
         
+        //Track shape layer
+        
+        let trackLayer = CAShapeLayer()
+        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.gray.cgColor
+        trackLayer.lineWidth = 10
+        trackLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeEnd = 0
+        
+        view.layer.addSublayer(trackLayer)
+        
+        //Circle shape layer
+        
+        shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.red.cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
-        
         shapeLayer.strokeEnd = 0
-        
         
         view.layer.addSublayer(shapeLayer)
     }
     
     func createTimer() {
+        timerCount -= 1
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
@@ -52,13 +62,13 @@ class TimerViewController: UIViewController {
         
         let circleAnimation = CABasicAnimation(keyPath: "strokeEnd")
         circleAnimation.toValue = 1
-        circleAnimation.duration = CFTimeInterval(timerCount)
+        circleAnimation.duration = CFTimeInterval(timerCount + 1)
         circleAnimation.fillMode = CAMediaTimingFillMode.forwards
         circleAnimation.isRemovedOnCompletion = false
         
         shapeLayer.add(circleAnimation, forKey: "basicCircleAnimation")
         
-        timerCount -= 1
+        
         createTimer()
         
     }
