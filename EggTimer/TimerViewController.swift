@@ -9,21 +9,59 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    var timerCount = 0
+    var timer: Timer?
+    let shapeLayer = CAShapeLayer()
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        timerLabel.text = String(timerCount)
+        
+        //drawing a circle shape layer
+        
+        let center = view.center
+        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.lineWidth = 10
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        
+        shapeLayer.strokeEnd = 0
+        
+        
+        view.layer.addSublayer(shapeLayer)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
-    */
+    
+    @objc func updateTime() {
+        if timerCount >= 0 {
+            timerLabel.text = String(timerCount)
+            timerCount -= 1
+        }
+    }
+    
+    @IBAction func StartTimerButton(_ sender: Any) {
+        
+        
+        let circleAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        circleAnimation.toValue = 1
+        circleAnimation.duration = CFTimeInterval(timerCount)
+        circleAnimation.fillMode = CAMediaTimingFillMode.forwards
+        circleAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(circleAnimation, forKey: "basicCircleAnimation")
+        
+        timerCount -= 1
+        createTimer()
+        
+    }
+    
 
 }
