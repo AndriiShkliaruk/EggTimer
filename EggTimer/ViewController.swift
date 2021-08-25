@@ -14,21 +14,21 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var timerCount = 0
+        var timerValue = 0
         
         switch segue.identifier {
         case "SoftBoiledTimer":
-            timerCount = 4
+            timerValue = 4
         case "MediumBoiledTimer":
-            timerCount = 6
+            timerValue = 6
         case "HardBoiledTimer":
-            timerCount = 10
+            timerValue = 10
         default:
             return
         }
         
         guard let destination = segue.destination as? TimerViewController else { return }
-        destination.timerCount = timerCount
+        destination.timerValue = timerValue
     }
 
 

@@ -6,72 +6,66 @@
 //
 
 import UIKit
+import SRCountdownTimer
+
 
 class TimerViewController: UIViewController {
 
-    var timerCount = 0
-    var timer: Timer?
-    let shapeLayer = CAShapeLayer()
+    var timerValue = 0
+    var isTimerRunning: Bool?
     @IBOutlet weak var timerLabel: UILabel!
-    
+    @IBOutlet weak var countdownTimer: SRCountdownTimer!
+    @IBOutlet weak var startTimerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerLabel.text = String(timerCount)
-        
-        let center = view.center
-        
-        //Track shape layer
-        
-        let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-        trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.gray.cgColor
-        trackLayer.lineWidth = 10
-        trackLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeEnd = 0
-        
-        view.layer.addSublayer(trackLayer)
-        
-        //Circle shape layer
-        
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 10
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
-        shapeLayer.strokeEnd = 0
-        
-        view.layer.addSublayer(shapeLayer)
+        countdownTimer.delegate = self
+        countdownTimer.lineWidth = 20
+        countdownTimer.lineColor = .yellow
+        countdownTimer.useMinutesAndSecondsRepresentation = true
+        countdownTimer.labelFont = UIFont(name: "Futura Medium", size: 50)
+        countdownTimer.timerFinishingText = "Done✔️"
     }
     
-    func createTimer() {
-        timerCount -= 1
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-    }
     
-    @objc func updateTime() {
-        if timerCount >= 0 {
-            timerLabel.text = String(timerCount)
-            timerCount -= 1
+    @IBAction func startTimerButtonPressed(_ sender: Any) {
+        switch isTimerRunning {
+        case true:
+            countdownTimer.pause()
+            isTimerRunning = false
+        case false:
+            countdownTimer.resume()
+            isTimerRunning = true
+        default:
+            countdownTimer.start(beginingValue: timerValue)
+            isTimerRunning = true
         }
-    }
-    
-    @IBAction func StartTimerButton(_ sender: Any) {
         
-        
-        let circleAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        circleAnimation.toValue = 1
-        circleAnimation.duration = CFTimeInterval(timerCount + 1)
-        circleAnimation.fillMode = CAMediaTimingFillMode.forwards
-        circleAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(circleAnimation, forKey: "basicCircleAnimation")
-        
-        
-        createTimer()
         
     }
-    
 
+    @IBAction func resetTimerButtonPressed(_ sender: Any) {
+        countdownTimer.end()
+        isTimerRunning = nil
+    }
 }
+
+extension TimerViewController: SRCountdownTimerDelegate {
+    func timerDidStart() {
+        startTimerButton.setTitle("Pause", for: .normal)
+    }
+    
+    func timerDidPause() {
+        startTimerButton.setTitle("Resume", for: .normal)
+    }
+    
+    func timerDidResume() {
+        startTimerButton.setTitle("Pause", for: .normal)
+    }
+    
+    func timerDidEnd() {
+        startTimerButton.setTitle("Start again", for: .normal)
+        isTimerRunning = nil
+    }
+}
+
