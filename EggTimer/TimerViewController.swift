@@ -13,18 +13,25 @@ class TimerViewController: UIViewController {
 
     var timerValue = 0
     var isTimerRunning: Bool?
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var countdownTimer: SRCountdownTimer!
     @IBOutlet weak var startTimerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countdownTimer.delegate = self
+
+    }
+    
+    func configureLayout() {
+        //Countdown timer configuration
         countdownTimer.lineWidth = 20
         countdownTimer.lineColor = .yellow
         countdownTimer.useMinutesAndSecondsRepresentation = true
         countdownTimer.labelFont = UIFont(name: "Futura Medium", size: 50)
-        countdownTimer.timerFinishingText = "Done✔️"
+        countdownTimer.timerFinishingText = "✔️"
+        
+        //Buttons configuration
+        
     }
     
     
@@ -41,13 +48,13 @@ class TimerViewController: UIViewController {
             isTimerRunning = true
         }
         
-        
     }
 
     @IBAction func resetTimerButtonPressed(_ sender: Any) {
         countdownTimer.end()
         isTimerRunning = nil
     }
+    
 }
 
 extension TimerViewController: SRCountdownTimerDelegate {

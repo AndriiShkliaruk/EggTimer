@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				E9010D96957DEC29C04C3515 /* Pods-EggTimer.debug.xcconfig */,
 				64244AAF927278FD5B893CF2 /* Pods-EggTimer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
