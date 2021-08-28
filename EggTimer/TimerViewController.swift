@@ -5,6 +5,7 @@
 //  Created by Andrii Shkliaruk on 23.08.2021.
 //
 
+import AVFoundation
 import UIKit
 import SRCountdownTimer
 
@@ -15,23 +16,16 @@ class TimerViewController: UIViewController {
     var isTimerRunning: Bool?
     @IBOutlet weak var countdownTimer: SRCountdownTimer!
     @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Countdown timer setup
         countdownTimer.delegate = self
-
-    }
-    
-    func configureLayout() {
-        //Countdown timer configuration
-        countdownTimer.lineWidth = 20
-        countdownTimer.lineColor = .yellow
         countdownTimer.useMinutesAndSecondsRepresentation = true
         countdownTimer.labelFont = UIFont(name: "Futura Medium", size: 50)
         countdownTimer.timerFinishingText = "✔️"
-        
-        //Buttons configuration
-        
     }
     
     
@@ -39,40 +33,46 @@ class TimerViewController: UIViewController {
         switch isTimerRunning {
         case true:
             countdownTimer.pause()
-            isTimerRunning = false
         case false:
             countdownTimer.resume()
-            isTimerRunning = true
         default:
             countdownTimer.start(beginingValue: timerValue)
-            isTimerRunning = true
         }
-        
     }
 
+    
     @IBAction func resetTimerButtonPressed(_ sender: Any) {
-        countdownTimer.end()
+        countdownTimer.reset()
         isTimerRunning = nil
+        startTimerButton.setTitle("Start again", for: .normal)
     }
     
 }
 
+
+//Delegate timer methods
 extension TimerViewController: SRCountdownTimerDelegate {
     func timerDidStart() {
         startTimerButton.setTitle("Pause", for: .normal)
+        isTimerRunning = true
+        infoLabel.isHidden = true
     }
     
     func timerDidPause() {
         startTimerButton.setTitle("Resume", for: .normal)
+        isTimerRunning = false
     }
     
     func timerDidResume() {
         startTimerButton.setTitle("Pause", for: .normal)
+        isTimerRunning = true
     }
     
     func timerDidEnd() {
         startTimerButton.setTitle("Start again", for: .normal)
         isTimerRunning = nil
+        AudioServicesPlaySystemSound(1304)
     }
 }
+
 
