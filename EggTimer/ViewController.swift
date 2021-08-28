@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         
         switch segue.identifier {
         case "SoftBoiledTimer":
-            timerValue = 4
+            timerValue = 3*60
         case "MediumBoiledTimer":
-            timerValue = 6
+            timerValue = 4*60
         case "HardBoiledTimer":
-            timerValue = 10
+            timerValue = 8*60
         default:
             return
         }

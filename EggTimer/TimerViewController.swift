@@ -5,6 +5,7 @@
 //  Created by Andrii Shkliaruk on 23.08.2021.
 //
 
+import AVFoundation
 import UIKit
 import SRCountdownTimer
 
@@ -41,9 +42,9 @@ class TimerViewController: UIViewController {
 
     
     @IBAction func resetTimerButtonPressed(_ sender: Any) {
-        countdownTimer.end()
         countdownTimer.reset()
         isTimerRunning = nil
+        startTimerButton.setTitle("Start again", for: .normal)
     }
     
 }
@@ -70,6 +71,8 @@ extension TimerViewController: SRCountdownTimerDelegate {
     func timerDidEnd() {
         startTimerButton.setTitle("Start again", for: .normal)
         isTimerRunning = nil
+        AudioServicesPlaySystemSound(1304)
     }
 }
+
 
