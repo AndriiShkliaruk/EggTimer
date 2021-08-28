@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0973A789BEC18894010A13BD /* Pods_EggTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28654A3D9490443AD6A60028 /* Pods_EggTimer.framework */; };
+		F9C3D48F26DA20CF00A49FCD /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3D48E26DA20CF00A49FCD /* BorderedButton.swift */; };
 		F9CE64F026D3D71900373B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE64EF26D3D71900373B7D /* AppDelegate.swift */; };
 		F9CE64F226D3D71900373B7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE64F126D3D71900373B7D /* SceneDelegate.swift */; };
 		F9CE64F426D3D71900373B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE64F326D3D71900373B7D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		28654A3D9490443AD6A60028 /* Pods_EggTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64244AAF927278FD5B893CF2 /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
 		E9010D96957DEC29C04C3515 /* Pods-EggTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.debug.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		F9C3D48E26DA20CF00A49FCD /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		F9CE64EC26D3D71900373B7D /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9CE64EF26D3D71900373B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9CE64F126D3D71900373B7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F9CE64EF26D3D71900373B7D /* AppDelegate.swift */,
 				F9CE64F126D3D71900373B7D /* SceneDelegate.swift */,
 				F9CE64F326D3D71900373B7D /* ViewController.swift */,
+				F9C3D48E26DA20CF00A49FCD /* BorderedButton.swift */,
 				F9CE64F526D3D71900373B7D /* Main.storyboard */,
 				F9FD955926D3FAC900A3625B /* TimerViewController.swift */,
 				F9CE64F826D3D71B00373B7D /* Assets.xcassets */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C3D48F26DA20CF00A49FCD /* BorderedButton.swift in Sources */,
 				F9FD955A26D3FAC900A3625B /* TimerViewController.swift in Sources */,
 				F9CE64F426D3D71900373B7D /* ViewController.swift in Sources */,
 				F9CE64F026D3D71900373B7D /* AppDelegate.swift in Sources */,
@@ -295,6 +299,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -350,6 +355,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};

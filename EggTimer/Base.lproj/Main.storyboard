@@ -18,35 +18,62 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6Ys-gJ-Xuz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="08e-Jf-1jJ">
-                                <rect key="frame" x="152" y="348" width="120" height="102"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="08e-Jf-1jJ">
+                                <rect key="frame" x="50" y="328" width="314" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94X-lS-lcO">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94X-lS-lcO" customClass="BorderedButton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="kLk-O7-CEV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                         <state key="normal" title="Soft Boiled">
                                             <color key="titleColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="oZA-Ls-3jo" kind="show" identifier="SoftBoiledTimer" id="yz9-hY-4ti"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWv-eO-YsF">
-                                        <rect key="frame" x="0.0" y="34" width="120" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWv-eO-YsF" customClass="BorderedButton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="314" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="OmV-fm-mNw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                         <state key="normal" title="Medium Boiled">
                                             <color key="titleColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="oZA-Ls-3jo" kind="show" identifier="MediumBoiledTimer" id="vYH-Sl-j6P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEm-qd-hfo">
-                                        <rect key="frame" x="0.0" y="68" width="120" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEm-qd-hfo" customClass="BorderedButton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="314" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="IhN-yq-veT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                         <state key="normal" title="Hard Boiled">
                                             <color key="titleColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="oZA-Ls-3jo" kind="show" identifier="HardBoiledTimer" id="vhQ-H3-lxq"/>
                                         </connections>
@@ -57,9 +84,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="08e-Jf-1jJ" secondAttribute="trailing" constant="50" id="27F-O5-CMv"/>
                             <constraint firstItem="6Ys-gJ-Xuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7kv-MW-7LH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Ys-gJ-Xuz" secondAttribute="trailing" id="9zW-zZ-QH9"/>
+                            <constraint firstItem="08e-Jf-1jJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fys-0x-jeE"/>
                             <constraint firstItem="6Ys-gJ-Xuz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PC8-aS-n4n"/>
+                            <constraint firstItem="08e-Jf-1jJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Wld-Vg-Y8Y"/>
+                            <constraint firstItem="08e-Jf-1jJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y8o-e2-7sP"/>
                             <constraint firstItem="6Ys-gJ-Xuz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iO8-UW-HO1"/>
                             <constraint firstAttribute="bottom" secondItem="6Ys-gJ-Xuz" secondAttribute="bottom" id="qxi-e7-RTW"/>
                             <constraint firstItem="6Ys-gJ-Xuz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-140" id="rPF-uG-wmC"/>
@@ -69,9 +100,6 @@
                     <navigationItem key="navigationItem" id="tHo-Tn-IkE">
                         <barButtonItem key="backBarButtonItem" title="Back" id="9jb-US-z43"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="softBoiledButton" destination="94X-lS-lcO" id="AEO-oT-OHK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,35 +113,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGK-qZ-9M1">
-                                <rect key="frame" x="189" y="667" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetTimerButtonPressed:" destination="oZA-Ls-3jo" eventType="touchUpInside" id="VGP-OX-SZI"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15t-59-GMa" customClass="SRCountdownTimer" customModule="SRCountdownTimer">
-                                <rect key="frame" x="38" y="237" width="340" height="340"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX7-Bo-xnd">
-                                <rect key="frame" x="107" y="619" width="201" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startTimerButtonPressed:" destination="oZA-Ls-3jo" eventType="touchUpInside" id="tpz-l9-ikM"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="M5J-ly-U0v">
+                                <rect key="frame" x="50" y="173" width="314" height="550"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15t-59-GMa" customClass="SRCountdownTimer" customModule="SRCountdownTimer">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="340"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start after the water has boiled" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQs-hG-upW">
+                                                <rect key="frame" x="72" y="146.5" width="170" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="170" id="mJm-yr-MKD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                <color key="textColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="15t-59-GMa" secondAttribute="height" multiplier="157:170" id="AI6-qm-brX"/>
+                                            <constraint firstItem="WQs-hG-upW" firstAttribute="centerY" secondItem="15t-59-GMa" secondAttribute="centerY" id="Mgy-NF-XO4"/>
+                                            <constraint firstItem="WQs-hG-upW" firstAttribute="centerX" secondItem="15t-59-GMa" secondAttribute="centerX" id="yhc-wk-cCe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="0.98431372549019602" green="0.93333333333333335" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trailLineColor">
+                                                <color key="value" red="0.98431372549019602" green="0.93333333333333335" blue="0.47450980392156861" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isLabelHidden" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                                <color key="value" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="timerFinishingText" value="Done"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yDJ-5J-dhf" userLabel="Buttons Stack View">
+                                        <rect key="frame" x="0.0" y="400" width="314" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX7-Bo-xnd" customClass="BorderedButton" customModule="EggTimer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                                <color key="backgroundColor" red="0.98431372549019602" green="0.93333333333333335" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="xTq-aJ-YRx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="startTimerButtonPressed:" destination="oZA-Ls-3jo" eventType="touchUpInside" id="tpz-l9-ikM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGK-qZ-9M1" customClass="BorderedButton" customModule="EggTimer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="90" width="314" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="wxA-Du-R9S"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resetTimerButtonPressed:" destination="oZA-Ls-3jo" eventType="touchUpInside" id="VGP-OX-SZI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="15t-59-GMa" secondAttribute="trailing" id="0Jc-SR-itB"/>
+                                    <constraint firstAttribute="trailing" secondItem="yDJ-5J-dhf" secondAttribute="trailing" id="Eai-O7-dFV"/>
+                                    <constraint firstItem="15t-59-GMa" firstAttribute="leading" secondItem="M5J-ly-U0v" secondAttribute="leading" id="Lsz-b1-Hgw"/>
+                                    <constraint firstItem="yDJ-5J-dhf" firstAttribute="leading" secondItem="M5J-ly-U0v" secondAttribute="leading" id="wSa-LG-1Yv"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iSE-K6-ksN"/>
                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M5J-ly-U0v" firstAttribute="centerY" secondItem="7Mp-r9-rKK" secondAttribute="centerY" id="6hn-cC-FZz"/>
+                            <constraint firstItem="M5J-ly-U0v" firstAttribute="leading" secondItem="iSE-K6-ksN" secondAttribute="leading" constant="50" id="CLU-sj-ES6"/>
+                            <constraint firstItem="iSE-K6-ksN" firstAttribute="trailing" secondItem="M5J-ly-U0v" secondAttribute="trailing" constant="50" id="pAS-Xa-hBt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wcx-A0-mS2"/>
                     <connections>
                         <outlet property="countdownTimer" destination="15t-59-GMa" id="0Vg-5w-yQa"/>
+                        <outlet property="infoLabel" destination="WQs-hG-upW" id="Ttd-Qk-394"/>
                         <outlet property="startTimerButton" destination="fX7-Bo-xnd" id="f5v-bG-kjR"/>
                     </connections>
                 </viewController>
@@ -143,6 +247,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="vYH-Sl-j6P"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="background" width="1125" height="2436"/>
     </resources>
